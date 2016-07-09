@@ -34,6 +34,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'bootstrap', '~> 4.0.0.alpha3'
 gem 'bootstrap-generators', '~> 3.3.4'
 
+# Charts
+gem 'chart-js-rails'
+
 # Bootstrap forms
 # gem 'bootstrap-form'
 
