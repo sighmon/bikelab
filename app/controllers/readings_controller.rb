@@ -29,6 +29,12 @@ class ReadingsController < ApplicationController
 
     respond_to do |format|
       if @reading.save
+        # byebug
+        DataChannel.broadcast_to(
+          "data_channel",
+          label: @reading.timestamp.strftime("%H:%M, %d %B, %Y").to_s,
+          readings: [@reading.temperature, @reading.humidity, @reading.particles, @reading.carbon_monoxide, @reading.heater_on ? 1 : 0]
+        )
         format.html { redirect_to @reading, notice: 'Reading was successfully created.' }
         format.json { render :show, status: :created, location: @reading }
       else
