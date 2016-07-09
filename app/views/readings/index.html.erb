@@ -4,6 +4,24 @@
 
 <canvas id="sensorReadingsChart" width="100%" height="50"></canvas>
 <script>
+
+  function getRandomArbitrary(min, max) {
+    return Math.random() * (max - min) + min;
+  }
+
+  function updateWithRandomData() {
+    updateChartData(Date.now(), [getRandomArbitrary(15, 30), getRandomArbitrary(20, 90), getRandomArbitrary(100, 300), getRandomArbitrary(400, 900), getRandomArbitrary(0, 1)]);
+    sensorReadingsChart.update();
+  }
+
+  function updateChartData(label, updateArray) {
+    sensorReadingsChart.data.labels.push(label);
+    for (var i = 0; i < sensorReadingsChart.data.datasets.length; i++) {
+      sensorReadingsChart.data.datasets[i].data.push(updateArray[i]);
+    };
+    sensorReadingsChart.update();
+  };
+
   var ctx = $("#sensorReadingsChart");
   var sensorReadingsChart = new Chart(ctx, {
       type: 'line',
