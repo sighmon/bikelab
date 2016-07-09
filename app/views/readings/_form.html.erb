@@ -1,0 +1,62 @@
+<%= form_for(reading) do |f| %>
+  <% if reading.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(reading.errors.count, "error") %> prohibited this reading from being saved:</h2>
+
+      <ul>
+      <% reading.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :temperature %>
+    <%= f.text_field :temperature %>
+  </div>
+
+  <div class="field">
+    <%= f.label :humidity %>
+    <%= f.text_field :humidity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :particles %>
+    <%= f.text_field :particles %>
+  </div>
+
+  <div class="field">
+    <%= f.label :carbon_monoxide %>
+    <%= f.text_field :carbon_monoxide %>
+  </div>
+
+  <div class="field">
+    <%= f.label :heater_on %>
+    <%= f.check_box :heater_on %>
+  </div>
+
+  <div class="field">
+    <%= f.label :device_id %>
+    <%= f.number_field :device_id %>
+  </div>
+
+  <div class="field">
+    <%= f.label :timestamp %>
+    <%= f.datetime_select :timestamp %>
+  </div>
+
+  <div class="field">
+    <%= f.label :latitude %>
+    <%= f.text_field :latitude %>
+  </div>
+
+  <div class="field">
+    <%= f.label :longitude %>
+    <%= f.text_field :longitude %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
