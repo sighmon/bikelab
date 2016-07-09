@@ -8,7 +8,7 @@
   var sensorReadingsChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: <%= raw(@readings.collect { |r| r.timestamp.to_s }.to_a) %>,
+        labels: <%= raw(@readings.collect { |r| r.timestamp.strftime("%H:%M, %d %B, %Y").to_s }.to_a) %>,
         datasets: [
           {
             label: "Temperature",
