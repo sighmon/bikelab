@@ -22,3 +22,7 @@
 
 # Ignore test run commands
 00-*
+
+# Sublime
+*.sublime*
+
