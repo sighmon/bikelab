@@ -6,6 +6,8 @@ Data is collected [from an Arduino](https://github.com/sighmon/bike_air_quality_
 
 [Chart.js](http://www.chartjs.org) is plotting the data updates live via [Action Cable](http://guides.rubyonrails.org/action_cable_overview.html).
 
+Made with [Pix](https://github.com/thatpixguy).
+
 <img src="https://raw.githubusercontent.com/sighmon/bikelab/master/bikelab.jpg" width="100%" />
 
 ## Built at RailsCamp
