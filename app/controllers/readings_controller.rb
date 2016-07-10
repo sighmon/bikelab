@@ -31,7 +31,7 @@ class ReadingsController < ApplicationController
       if @reading.save
         # byebug
         DataChannel.broadcast_to(
-          "data_channel",
+          @reading.device,
           label: @reading.timestamp.strftime("%H:%M, %d %B, %Y").to_s,
           readings: [@reading.temperature, @reading.humidity, @reading.particles, @reading.carbon_monoxide, @reading.heater_on ? 1 : 0]
         )

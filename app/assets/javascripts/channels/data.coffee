@@ -1,4 +1,4 @@
-App.data = App.cable.subscriptions.create "DataChannel",
+App.data = App.cable.subscriptions.create { channel: "DataChannel", id: 2 },
   connected: ->
     # Called when the subscription is ready for use on the server
     console.log("DataChannel is connected.")
