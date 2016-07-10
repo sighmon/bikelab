@@ -1,4 +1,5 @@
 class Reading < ApplicationRecord
+  belongs_to :device
   validates_presence_of :temperature
   validates_presence_of :humidity
   validates_presence_of :particles

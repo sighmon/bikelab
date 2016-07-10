@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710012004) do
+ActiveRecord::Schema.define(version: 20160710013623) do
 
   create_table "devices", force: :cascade do |t|
     t.integer  "hardware_id"
@@ -26,10 +26,11 @@ ActiveRecord::Schema.define(version: 20160710012004) do
     t.boolean  "heater_on"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.integer  "device_id"
     t.datetime "timestamp"
     t.float    "latitude"
     t.float    "longitude"
+    t.integer  "device_id"
+    t.index ["device_id"], name: "index_readings_on_device_id"
   end
 
 end
