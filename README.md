@@ -12,9 +12,7 @@ Made with [Pix](https://github.com/thatpixguy).
 
 ## Try for yourself?
 
-Clone this repository.
-
-Then in the app root run:
+Clone this repository. cd into ```bikelab``` directory and run:
 
 ```$ bundle```
 
