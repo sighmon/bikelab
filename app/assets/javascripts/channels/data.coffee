@@ -1,3 +1,4 @@
+# TODO: Hand in Device ID here instead of hard coding id: 2 which was my dev device id.
 App.data = App.cable.subscriptions.create { channel: "DataChannel", id: 2 },
   connected: ->
     # Called when the subscription is ready for use on the server

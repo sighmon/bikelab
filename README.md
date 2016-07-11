@@ -10,6 +10,24 @@ Made with [Pix](https://github.com/thatpixguy).
 
 <img src="https://raw.githubusercontent.com/sighmon/bikelab/master/bikelab.jpg" width="100%" />
 
+## Try for yourself?
+
+Clone this repository.
+
+Then in the app root run:
+
+```$ bundle```
+
+```$ rails db:migrate```
+
+```$ rails db:seed```
+
+To simulate sending data from the iOS app to the server:
+
+```$ curl -d 'reading[temperature]=21.3&reading[humidity]=46.7&reading[particles]=123.45&reading[carbon_monoxide]=609.4&reading[heater_on]=1&reading[device_id]=2&reading[timestamp]=2016-07-09 03:30:00 UTC&reading[latitude]=0.0487498275&reading[longitude]=-0.0487498275' http://localhost:3000/readings```
+
+Have your terminal window side by side with a browser open at ```http://localhost:3000```, send a few different values and see the chart update live! :-)
+
 ## Built at RailsCamp
 
 Shout out and special thanks to Lauren and everyone who organised the awesome [RailsCamp 19 in Adelaide](http://lkhennessy.github.io/rails-camp/).
