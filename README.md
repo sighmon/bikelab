@@ -2,9 +2,9 @@
 
 Air quality sensor data showing what you're breathing when you're cycling.
 
-Data is collected [from an Arduino](https://github.com/sighmon/bike_air_quality_sensors), sent via bluetooth to an [iOS app](https://github.com/sighmon/BikeAirQualitySensorsiOS), and then validated, adding location data and passed to this Rails 5 app.
+Data is collected [from an Arduino](https://github.com/sighmon/bike_air_quality_sensors), sent via bluetooth to an [iOS app](https://github.com/sighmon/BikeAirQualitySensorsiOS) which adds location data and passed to this Rails 5 app.
 
-[Chart.js](http://www.chartjs.org) is plotting the data updates live via [Action Cable](http://guides.rubyonrails.org/action_cable_overview.html).
+[Chart.js](http://www.chartjs.org) is plotting the data updates **live** using the awesome new [Action Cable](http://guides.rubyonrails.org/action_cable_overview.html) in Rails 5.
 
 Made with [Pix](https://github.com/thatpixguy).
 
