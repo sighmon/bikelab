@@ -4,7 +4,22 @@ class ReadingsController < ApplicationController
   # GET /readings
   # GET /readings.json
   def index
-    @readings = Reading.all.sort_by(&:timestamp)
+    @readings = Reading.all.sort_by(&:timestamp)#.last(600)
+
+    # Just showing the readings every 2.5 minutes for the MQ-7 Carbon Monoxide sensor
+    # last_reading = nil
+    # this_reading = nil
+    # real_readings = []
+    # @readings.each do |r|
+    #   this_reading = r
+    #   if not last_reading.nil?
+    #     if not last_reading.heater_on and this_reading.heater_on
+    #       real_readings << this_reading
+    #     end
+    #   end
+    #   last_reading = this_reading
+    # end
+    # @readings = real_readings
   end
 
   # GET /readings/1
