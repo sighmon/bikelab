@@ -11,4 +11,35 @@ App.data = App.cable.subscriptions.create { channel: "DataChannel", id: 2 },
   received: (data) ->
     # Called when there's incoming data on the websocket for this channel
     console.log("DataChannel received: " + data)
-    updateChartData(data.label, data.readings)
+    @updateChartData(data)
+    @prependTableData(data)
+
+  updateChartData: (data) ->
+    # Update chart
+    sensorReadingsChart.data.labels.push(data.label)
+    for i in [0...sensorReadingsChart.data.datasets.length]
+      sensorReadingsChart.data.datasets[i].data.push(data.readings[i])
+    sensorReadingsChart.update()
+
+  prependTableData: (data) ->
+    # Update table
+    html = @createLine(data)
+    $("#sensorReadingsTable").prepend(html)
+ 
+  createLine: (data) ->
+    """
+    <tr>
+      <td>#{data.readings[0]}</td>
+      <td>#{data.readings[1]}</td>
+      <td>#{data.readings[2]}</td>
+      <td>#{data.readings[3]}</td>
+      <td>#{data.readings[4]}</td>
+      <td>2</td>
+      <td>#{data.label}</td>
+      <td>#{data.location[0]}</td>
+      <td>#{data.location[1]}</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    """

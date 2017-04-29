@@ -4,7 +4,7 @@ class ReadingsController < ApplicationController
   # GET /readings
   # GET /readings.json
   def index
-    @readings = Reading.all.sort_by(&:timestamp)#.last(600)
+    @readings = Reading.all.sort_by(&:timestamp).last(200)#.last(600)
 
     # Just showing the readings every 2.5 minutes for the MQ-7 Carbon Monoxide sensor
     # last_reading = nil
@@ -48,7 +48,8 @@ class ReadingsController < ApplicationController
         DataChannel.broadcast_to(
           @reading.device,
           label: @reading.timestamp.strftime("%H:%M, %d %B, %Y").to_s,
-          readings: [@reading.temperature, @reading.humidity, @reading.particles, @reading.carbon_monoxide, @reading.heater_on ? 1 : 0]
+          readings: [@reading.temperature, @reading.humidity, @reading.particles, @reading.carbon_monoxide, @reading.heater_on ? 1 : 0],
+          location: [@reading.latitude, @reading.longitude]
         )
         format.html { redirect_to @reading, notice: 'Reading was successfully created.' }
         format.json { render :show, status: :created, location: @reading }

@@ -14,13 +14,16 @@
     sensorReadingsChart.update();
   }
 
-  function updateChartData(label, updateArray) {
-    sensorReadingsChart.data.labels.push(label);
-    for (var i = 0; i < sensorReadingsChart.data.datasets.length; i++) {
-      sensorReadingsChart.data.datasets[i].data.push(updateArray[i]);
-    };
-    sensorReadingsChart.update();
-  };
+  // function updateChartData(label, updateArray) {
+  //   // Update chart
+  //   sensorReadingsChart.data.labels.push(label);
+  //   for (var i = 0; i < sensorReadingsChart.data.datasets.length; i++) {
+  //     sensorReadingsChart.data.datasets[i].data.push(updateArray[i]);
+  //   };
+  //   sensorReadingsChart.update();
+  //   // Update list
+
+  // };
 
   var ctx = $("#sensorReadingsChart");
   var sensorReadingsChart = new Chart(ctx, {
@@ -120,7 +123,7 @@
   });
 </script>
 
-<table>
+<table id="sensorReadingsTable">
   <thead>
     <tr>
       <th>Temperature (&deg;C)</th>
@@ -137,7 +140,7 @@
   </thead>
 
   <tbody>
-    <% @readings.each do |reading| %>
+    <% @readings.reverse.each do |reading| %>
       <tr>
         <td><%= reading.temperature %></td>
         <td><%= reading.humidity %></td>
