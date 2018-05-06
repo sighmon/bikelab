@@ -15,5 +15,5 @@
 //= require bootstrap-sprockets
 //= require turbolinks
 //= require bootstrap
-//= require Chart
+//= require Chart.min
 //= require_tree .
