@@ -140,7 +140,7 @@
   </thead>
 
   <tbody>
-    <% @readings.reverse.each do |reading| %>
+    <% @readings.last(20).reverse.each do |reading| %>
       <tr>
         <td><%= reading.temperature %></td>
         <td><%= reading.humidity %></td>
