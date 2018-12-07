@@ -34,7 +34,7 @@ App.data = App.cable.subscriptions.create { channel: "DataChannel", id: 2 },
       <td>#{data.readings[2]}</td>
       <td>#{data.readings[3]}</td>
       <td>#{data.readings[4]}</td>
-      <td>2</td>
+      <td>#{data.device_id}</td>
       <td>#{data.label}</td>
       <td>#{data.location[0]}</td>
       <td>#{data.location[1]}</td>

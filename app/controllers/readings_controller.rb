@@ -49,6 +49,7 @@ class ReadingsController < ApplicationController
           @reading.device,
           label: @reading.timestamp.strftime("%H:%M, %d %B, %Y").to_s,
           readings: [@reading.temperature, @reading.humidity, @reading.particles, @reading.carbon_monoxide, @reading.heater_on ? 1 : 0],
+          device_id: @reading.device_id,
           location: [@reading.latitude, @reading.longitude]
         )
         format.html { redirect_to @reading, notice: 'Reading was successfully created.' }
