@@ -13,8 +13,8 @@ class ReadingsController < ApplicationController
     # @readings.each do |r|
     #   this_reading = r
     #   if not last_reading.nil?
-    #     if not last_reading.heater_on and this_reading.heater_on
-    #       real_readings << this_reading
+    #     if last_reading.heater_on and not this_reading.heater_on
+    #       real_readings << last_reading
     #     end
     #   end
     #   last_reading = this_reading
